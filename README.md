@@ -1,30 +1,32 @@
-#Problem
-The COVID-19 pandemic highlighted the need for accurate and timely forecasting of daily case counts, enabling governments and healthcare organizations to prepare and allocate resources more effectively. Predicting daily COVID-19 cases, however, is challenging due to the highly dynamic nature of the pandemic, with variations across regions, timeframes, and demographic factors.
+# Predictive Modeling of COVID-19 Daily Case Counts Using XGBoost Regression
 
-#Solution
-This project builds a machine learning model using the XGBoost regression algorithm to accurately predict daily COVID-19 cases. By applying advanced regression methods and optimizing hyperparameters, this model outperforms many traditional prediction techniques. The predictive capabilities of this model offer a reliable tool for stakeholders to make informed decisions, contributing to improved responses and preparations against the ongoing challenges of COVID-19.
+## Problem
+Accurate forecasting of daily COVID-19 cases is crucial for effective resource allocation and planning during the pandemic. With the highly dynamic nature of the virus's spread, relying on traditional methods often leads to inaccurate predictions that hinder response efforts. This project aims to address the challenge of predicting daily case counts based on historical data.
 
-#Data
-Dataset: The dataset contains historical data on COVID-19 case counts from various states, with each feature representing a different region or case attribute.
-Source: Kaggle COVID-19 Daily Cases Prediction Challenge
-#Data Description:
-Training samples: 2700
-Testing samples: 893
-Features: 94 columns, with each column representing attributes like case counts in different states (e.g., "CA" for California, "TX" for Texas, etc.).
-#Model
-Algorithm: XGBoost Regressor
-#Hyperparameters:
-objective='reg:squarederror'
-n_estimators=100
-learning_rate=0.024
-eval_metric='mae' (Mean Absolute Error for validation)
-device='cuda:0' (utilizing GPU for training efficiency)
-#Preprocessing Steps:
-Imputed missing values, if any, using column-wise means or modes
-Categorical encoding: Converted categorical features into numerical ones using one-hot encoding
-Standardization: Scaled numerical features for optimal model performance
-#Evaluation
-Evaluation Metric: Root Mean Squared Error (RMSE)
-Cross-Validation Score: Mean RMSE of 0.9071, providing a reliable measure of model generalization across different data splits.
-#Citation
-ntuee. ML2021Spring-hw1. Kaggle COVID-19 Daily Cases Prediction Challenge, 2021. Kaggle.
+## Solution
+This project employs machine learning techniques to build a regression model that predicts daily COVID-19 cases using the XGBoost algorithm. By leveraging historical case data across various states, the model enhances prediction accuracy compared to traditional forecasting methods. The insights gained from this predictive model provide valuable information to public health officials and policymakers, facilitating more effective decision-making in response to the pandemic.
+
+## Dataset
+The dataset used in this project consists of historical COVID-19 case counts from various states, encompassing a wide array of features. Key columns include:
+- **id**: Unique identifier for each entry
+- **AL**: Case counts in Alabama
+- **AK**: Case counts in Alaska
+- **AZ**: Case counts in Arizona
+- **...**: (continues for other states)
+- **tested_positive**: Number of positive test cases
+
+**Source**: [Kaggle COVID-19 Daily Cases Prediction Challenge](https://www.kaggle.com/competitions/ml2021spring-hw1/data)
+
+## Model Details
+The model implemented is the **XGBoost Regressor**, a robust gradient boosting framework that excels in regression tasks. The hyperparameters used for the model include:
+- **Objective**: `reg:squarederror`
+- **Number of estimators**: 100
+- **Learning rate**: 0.024
+- **Evaluation metric**: `mae` (Mean Absolute Error)
+- **Device**: `cuda:0` (for GPU acceleration)
+
+## Evaluation
+The model's performance is assessed using Root Mean Squared Error (RMSE) as the evaluation metric. The cross-validation mean score achieved was **0.9071**, indicating the model's strong predictive capability.
+
+## Citation
+ntuee. *ML2021Spring-hw1*. [Kaggle COVID-19 Daily Cases Prediction Challenge](https://kaggle.com/competitions/ml2021spring-hw1), 2021. Kaggle.
